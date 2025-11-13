@@ -24,7 +24,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
 
-  <title>AmpAttention for Multi-view Robot Manipulation</title>
+  <title>Hyperbolic Multiview Pretraining for Robotic Manipulation</title>
 <!--   <link rel="icon" type="image/x-icon" href="static/images/favicon.ico"> -->
   <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
   rel="stylesheet">
@@ -52,900 +52,702 @@
 
 <body>
 
-  <section class="hero">
-    <div class="hero-body">
-      <div class="container is-max-desktop">
-        <div class="columns is-centered">
-          <div class="column has-text-centered">
-            <!-- <h1 class="title is-1 publication-title" style="font-size: 44px;">Rethinking Latent Redundancy in Behavior Cloning:</h1> -->
-            <h1 class="title is-1 publication-title" style="font-size: 30px;">Differential Amplifier-Inspired AmpAttention for Multi-View Robotic Manipulation</h1>
-            <!-- 注释掉下面这部分以匿名 -->
-            <!-- Paper authors -->
-            <!-- <div class="is-size-5 publication-authors">
-                    <span class="author-block" style="margin-left: 10px;">
-                      <a href="https://jinyang.website/" target="_blank">Jin Yang</a><sup>1</sup> <sup>2</sup>
-                    </span>
-                    <span class="author-block" style="margin-left: 10px;">
-                      <a href="https://gr.xjtu.edu.cn/web/pingwei" target="_blank">Ping Wei</a><sup>1</sup> <sup>2</sup>
-                    </span>
-                    <span class="author-block" style="margin-left: 10px;">
-                      <a href="http://www.aiar.xjtu.edu.cn/info/1046/1229.htm" target="_blank">Nanning Zheng</a><sup>1</sup> <sup>2</sup>
-                    </span>    
-                  </div> -->
-
-                  <!-- <div class="is-size-5 publication-authors"> -->
-                    <!-- <span class="author-block">
-                      <sup>1</sup>Xi'an Jiaotong University  <sup>2</sup>Westlake University  <sup>*</sup>Project Leader</span>  <sup>†</sup>Corresponding Author</span>  -->
-                      <!-- <span class="author-block">
-                        <sup>1</sup>Xi'an Jiaotong University <sup>2</sup>National Key Laboratory of Human-Machine Hybrid Augmented Intelligence 
-                      </span> -->
-                  <!-- </div> -->
-
-                  <!-- <div class="column has-text-centered">
-                    <div class="publication-links"> -->
-
-                    <!-- Arxiv PDF link -->
-                    <!-- <span class="link-block">
-                      <a href="" target="_blank"
-                      class="external-link button is-normal is-rounded is-dark">
-                      <span class="icon">
-                        <i class="fas fa-file-pdf"></i>
-                      </span>
-                      <span>Paper (Coming soon)</span>
-                      </a>
-                    </span> -->
-
-                    <!-- Supplementary PDF link -->
-                      <!-- <span class="link-block">
-                          <a href="static/pdfs/supplementary_material.pdf" target="_blank"
+    <section class="hero">
+        <div class="hero-body">
+            <div class="container is-max-desktop">
+                <div class="columns is-centered">
+                    <div class="column has-text-centered">
+                        <!-- <h1 class="title is-1 publication-title" style="font-size: 44px;">Rethinking Latent Redundancy in Behavior Cloning:</h1> -->
+                        <h1 class="title is-1 publication-title" style="font-size: 30px;">Hyperbolic Multiview Pretraining for Robotic Manipulation</h1>
+                        <!-- 注释掉下面这部分以匿名 -->
+                        <!-- Paper authors -->
+                        <!-- <div class="is-size-5 publication-authors">
+                                <span class="author-block" style="margin-left: 10px;">
+                                  <a href="https://jinyang.website/" target="_blank">Jin Yang</a><sup>1</sup> <sup>2</sup>
+                                </span>
+                                <span class="author-block" style="margin-left: 10px;">
+                                  <a href="https://gr.xjtu.edu.cn/web/pingwei" target="_blank">Ping Wei</a><sup>1</sup> <sup>2</sup>
+                                </span>
+                                <span class="author-block" style="margin-left: 10px;">
+                                  <a href="http://www.aiar.xjtu.edu.cn/info/1046/1229.htm" target="_blank">Nanning Zheng</a><sup>1</sup> <sup>2</sup>
+                                </span>
+                              </div> -->
+                        <!-- <div class="is-size-5 publication-authors"> -->
+                        <!-- <span class="author-block">
+                          <sup>1</sup>Xi'an Jiaotong University  <sup>2</sup>Westlake University  <sup>*</sup>Project Leader</span>  <sup>†</sup>Corresponding Author</span>  -->
+                        <!-- <span class="author-block">
+                          <sup>1</sup>Xi'an Jiaotong University <sup>2</sup>National Key Laboratory of Human-Machine Hybrid Augmented Intelligence
+                        </span> -->
+                        <!-- </div> -->
+                        <!-- <div class="column has-text-centered">
+                          <div class="publication-links"> -->
+                        <!-- Arxiv PDF link -->
+                        <!-- <span class="link-block">
+                          <a href="" target="_blank"
                           class="external-link button is-normal is-rounded is-dark">
                           <span class="icon">
                             <i class="fas fa-file-pdf"></i>
                           </span>
-                          <span>Supplementary</span>
-                        </a>
-                      </span> -->
-
-                    <!-- ArXiv abstract Link -->
-                    <!-- <span class="link-block">
-                      <a href="https://jinyang.website/multiview_robotic_manipulation.github.io/" target="_blank"
-                      class="external-link button is-normal is-rounded is-dark">
-                      <span class="icon">
-                        <i class="ai ai-arxiv"></i>
-                      </span>
-                      <span>arXiv (Coming soon)</span>                  
-                      </a>
-                    </span> -->
-
-                    <!-- Video Link. -->
-                    <!-- <span class="link-block">
-                      <a href="https://www.youtube.com/watch?v=ADGm9rlZ7ls"
-                        class="external-link button is-normal is-rounded is-dark">
-                        <span class="icon">
-                            <i class="fab fa-youtube"></i>
+                          <span>Paper (Coming soon)</span>
+                          </a>
+                        </span> -->
+                        <!-- Supplementary PDF link -->
+                        <!-- <span class="link-block">
+                            <a href="static/pdfs/supplementary_material.pdf" target="_blank"
+                            class="external-link button is-normal is-rounded is-dark">
+                            <span class="icon">
+                              <i class="fas fa-file-pdf"></i>
+                            </span>
+                            <span>Supplementary</span>
+                          </a>
+                        </span> -->
+                        <!-- ArXiv abstract Link -->
+                        <!-- <span class="link-block">
+                          <a href="https://jinyang.website/multiview_robotic_manipulation.github.io/" target="_blank"
+                          class="external-link button is-normal is-rounded is-dark">
+                          <span class="icon">
+                            <i class="ai ai-arxiv"></i>
+                          </span>
+                          <span>arXiv (Coming soon)</span>
+                          </a>
+                        </span> -->
+                        <!-- Video Link. -->
+                        <!-- <span class="link-block">
+                          <a href="https://www.youtube.com/watch?v=ADGm9rlZ7ls"
+                            class="external-link button is-normal is-rounded is-dark">
+                            <span class="icon">
+                                <i class="fab fa-youtube"></i>
+                            </span>
+                            <span>Video</span>
+                          </a>
+                        </span> -->
+                        <!-- Github link -->
+                        <!-- <span class="link-block">
+                          <a href="https://jinyang.website/multiview_robotic_manipulation.github.io/" target="_blank"
+                          class="external-link button is-normal is-rounded is-dark">
+                          <span class="icon">
+                            <i class="fab fa-github"></i>
+                          </span>
+                          <span>Code (Coming soon)</span>
+                          </a>
+                        </span> -->
+                        <!-- </a> -->
                         </span>
-                        <span>Video</span>
-                      </a>
-                    </span> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+        </div>
+    </section>
 
-                    <!-- Github link -->
-                    <!-- <span class="link-block">
-                      <a href="https://jinyang.website/multiview_robotic_manipulation.github.io/" target="_blank"
-                      class="external-link button is-normal is-rounded is-dark">
-                      <span class="icon">
-                        <i class="fab fa-github"></i>
-                      </span>
-                      <span>Code (Coming soon)</span>
-                      </a>
-                    </span> -->
-                    
-                <!-- </a> -->
-              </span>
+
+    <!-- Teaser video-->
+    <!-- <section class="hero teaser">
+      <div class="container is-max-desktop">
+        <div class="hero-body">
+          <video poster="" id="tree" autoplay controls muted loop height="100%"> -->
+    <!-- Your video here -->
+    <!-- <source src="static/videos/banner_video.mp4"
+            type="video/mp4">
+          </video>
+          <h2 class="subtitle has-text-centered">
+            Aliquam vitae elit ullamcorper tellus egestas pellentesque. Ut lacus tellus, maximus vel lectus at, placerat pretium mi. Maecenas dignissim tincidunt vestibulum. Sed consequat hendrerit nisl ut maximus.
+          </h2>
+        </div>
+      </div>
+    </section> -->
+    <!-- End teaser video -->
+    <!-- Paper abstract -->
+    <section class="section hero is-light">
+        <div class="container is-max-desktop">
+            <div class="columns is-centered has-text-centered">
+                <div class="column is-four-fifths">
+                    <h2 class="title is-3">Abstract</h2>
+                    <div class="content has-text-justified">
+                        <p>
+                            3D-aware visual pretraining has proven effective in improving the performance of downstream robotic manipulation tasks.
+                            However, existing methods are constrained to Euclidean embedding spaces, whose flat geometry limits the modeling of structural relations among embeddings.
+                            As a result, they struggle to learn structured embeddings that are essential for robust spatial perception in robotic applications.
+                            To this end, we propose <u>HyperMVP</u>, a self-supervised framework for <u>Hyper</u>bolic <u>M</u>ulti<u>V</u>iew <u>P</u>retraining.
+                            The hyperbolic space offers geometric properties that are well suited for capturing structural relations.
+                            Methodologically, we extend the masked autoencoder paradigm and design a GeoLink encoder to learn multiview hyperbolic representations.
+                            The pretrained encoder is then finetuned with visuomotor policies on manipulation tasks.
+                            In addition, we introduce 3D-MOV, a large-scale dataset comprising multiple types of 3D point clouds to support pretraining.
+                            We evaluate HyperMVP on COLOSSEUM, RLBench, and real-world scenarios, where it consistently outperforms strong baselines across diverse tasks and perturbation settings.
+                            Our results highlight the potential of 3D-aware pretraining in a non-Euclidean space for learning robust and generalizable robotic manipulation policies.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End paper abstract -->
+    <!-- Paper intro & method -->
+    <section class="section hero is-small">
+        <div class="container is-max-desktop">
+            <div class="columns is-centered has-text-centered">
+                <div class="column is-four-fifths">
+                    <h2 class="title is-3">Introduction</h2>
+
+                    <!--         <div style="text-align: center;">
+                      <img src="static/images/introduction.png" alt="Description of the image" style="width: 37%; height: auto;">
+                      <figcaption>Comparison of attention distributions between standard attention and AmpAttention in robotic view images.</figcaption>
+                    </div> -->
+
+                    <div style="display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 15px; text-align: center;">
+                        <figure style="width: 90%; margin: 0;">
+                            <img src="static/images/introduction.png" alt="AmpAttention vs standard attention" style="width: 90%; height: auto; max-width: 1600px; display:block; margin: 0 auto;">
+                            <br>
+                            <figcaption>
+                                <strong>Overview of HyperMVP.</strong>(a)Illustration of the HyperMVP framework, including the 3D-MOV pretraining dataset, embedding spaces, and downstream applications.
+                                (b)Comparison of generalization performance(%) on the Colosseum under various perturbation settings.
+                            </figcaption>
+                        </figure>
+
+                        <!--<figure style="width: 37%; margin: 0;">
+                                <img src="static/images/theory.png" alt="Differential amplifier derivation" style="width: 100%; height: auto;">
+                                <figcaption>Derivation of the differential amplifier.</figcaption>
+                            </figure>
+                        </div>-->
+
+
+                        <div class="content has-text-justified">
+                            <p>
+                                <ul>
+                                    <li>We propose HyperMVP,  it is the first framework to explore 3D multiview pretraining in hyperbolic space for robotic manipulation.</li>
+                                    <li>We introduce 3D-MOV, a large-scale dataset comprising four types of 3D point clouds, with each instance paired with five orthographic images. It provides a foundation for analyzing how different types of 3D data affect manipulation performance.</li>
+                                    <li>We present comprehensive evaluation results and analytical insights regarding the model’s performance across both simulated and real-world scenarios.</li>
+                                </ul>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </section>
+
+    <section class="section hero is-small">
+        <div class="container is-max-desktop">
+            <div class="columns is-centered has-text-centered">
+                <div class="column is-four-fifths">
+                    <h2 class="title is-3">Pipeline</h2>
+                    <div style="text-align: center;">
+                        <img src="static/images/pipeline.png" alt="Description of the image" style="width: 90%; height: auto;">
+                        <div class="content has-text-justified" style="text-align: center; margin-bottom: 0;">
+                            <strong>Methodology of HyperMVP.</strong>
+                            HyperMVP follows a pretraining–finetuning paradigm.
+                            During pretraining, each point cloud is rendered into five orthographic images.
+                            These images are masked and fed into the GeoLink encoder to learn multiview representations in Euclidean and hyperbolic spaces.
+                            To support pretraining, we introduce intra-view and inter-view reconstruction pretext tasks and build a large-scale 3D-MOV dataset.
+                            During finetuning, the pretrained GeoLink encoder is finetuned with the Robotic View Transformer (RVT) to learn visuomotor policies.
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </section>
+
+    <section class="section hero is-small">
+        <div class="container is-max-desktop">
+            <div class="columns is-centered has-text-centered">
+                <div class="column is-four-fifths">
+                    <h2 class="title is-3">Reconstruction Results</h2>
+                    <figure style="width: 100%; margin: 0;">
+                        <img src="static/images/visual_detail.png" alt="AmpAttention vs standard attention" style="width: 60%; height: auto; max-width: 1600px; display:block; margin: 0 auto;">
+                        <br>
+                        <figcaption>
+                            HyperMVP successfully restores <strong>fine details in images</strong>, such as the bird's claws in the left image and the car's hubcaps and windshield in the right image.
+                        </figcaption>
+                    </figure><br><br>
+
+                    <figure style="width: 100%; margin: 0;">
+                        <img src="static/images/visual_scene.png" alt="AmpAttention vs standard attention" style="width: 60%; height: auto; max-width: 1600px; display:block; margin: 0 auto;">
+                        <br>
+                        <figcaption>
+                            HyperMVP is also capable of successfully restoring <strong>scene images</strong>, such as the refrigerator interior scene (on the left) and the desktop scene (on the right).
+                        </figcaption>   
+                    </figure><br><br>
+
+                    <figure style="width: 100%; margin: 0;">
+                        <img src="static/images/visual_zero.png" alt="AmpAttention vs standard attention" style="width: 60%; height: auto; max-width: 1600px; display:block; margin: 0 auto;">
+                        <br>
+                        <figcaption>
+                            Furthermore, HyperMVP is even capable of restoring <strong>Out-of-Domain (OOD) images</strong>. For instance, the robotic manipulation scene in the left image was not present in the training data distribution. Similarly, the figurine in the right image did not appear in the training set.
+                        </figcaption>
+                    </figure><br><br>
+                </div>
+            </div>
+    </section>
+
+
+    <!-- Paper experiment -->
+    <section class="section hero is-small">
+        <div class="container is-max-desktop">
+            <div class="columns is-centered has-text-centered">
+                <div class="column is-four-fifths">
+                    <h2 class="title is-3">Simulation Experiments</h2>
+
+                    <div class="content has-text-justified" style="text-align: center; margin-bottom: 0;">
+                        Multi-task performance on RLBench. We report success rates (%) for 18 RLBench tasks, along with the mean success rate (%).
+                    </div>
+
+                    <div style="text-align: center;">
+                        <!-- <p style="margin-bottom: 10px;">
+                          Multi-task performance on RLBench. We report success rates (%) for 18 RLBench tasks, along with the mean success rate (%) and training time (days).
+                        </p> -->
+                        <img src="static/images/rlbench_tasks_results.png" alt="Description of the image" style="width: 95%; height: auto;">
+                    </div>
+
+                    <!-- <div class="content has-text-justified" style="text-align: center;">
+                      Although only MetaWorld is strictly a robot manipulation benchmark, yet we include all tasks to comprehensively demonstrate the effectiveness of IB.
+                    </div> -->
+                    <!-- Video 滚动容器 -->
+                    <div style="margin-top: 16px; text-align: center;">
+                        <h3 class="title is-5" style="margin-bottom: 12px;">Execution examples — selected tasks</h3>
+
+                        <!-- 第一行：7 个任务（来自 eval_variations0/videos/） -->
+                        <div class="exec-grid" aria-label="Task examples row">
+                            <div class="exec-item">
+                                <video class="exec-thumb" autoplay muted loop playsinline preload="metadata" title="basketball_in_hoop_0">
+                                    <source src="static/videos/rlbench/eval_variations0/videos/basketball_in_hoop_0_success_0.mp4" type="video/mp4">
+                                </video>
+                                <div class="exec-caption">basketball in hoop</div>
+                            </div>
+
+                            <div class="exec-item">
+                                <video class="exec-thumb" autoplay muted loop playsinline preload="metadata" title="close_laptop_lid_0">
+                                    <source src="static/videos/rlbench/eval_variations0/videos/close_laptop_lid_0_success_0.mp4" type="video/mp4">
+                                </video>
+                                <div class="exec-caption">close laptop lid</div>
+                            </div>
+
+                            <div class="exec-item">
+                                <video class="exec-thumb" autoplay muted loop playsinline preload="metadata" title="get_ice_from_fridge_0">
+                                    <source src="static/videos/rlbench/eval_variations0/videos/get_ice_from_fridge_0_success_0.mp4" type="video/mp4">
+                                </video>
+                                <div class="exec-caption">get ice from fridge</div>
+                            </div>
+
+                            <div class="exec-item">
+                                <video class="exec-thumb" autoplay muted loop playsinline preload="metadata" title="move_hanger_0">
+                                    <source src="static/videos/rlbench/eval_variations0/videos/move_hanger_0_success_0.mp4" type="video/mp4">
+                                </video>
+                                <div class="exec-caption">move hanger</div>
+                            </div>
+
+                            <div class="exec-item">
+                                <video class="exec-thumb" autoplay muted loop playsinline preload="metadata" title="scoop_with_spatula_0">
+                                    <source src="static/videos/rlbench/eval_variations0/videos/scoop_with_spatula_0_success_0.mp4" type="video/mp4">
+                                </video>
+                                <div class="exec-caption">scoop with spatula</div>
+                            </div>
+
+                            <div class="exec-item">
+                                <video class="exec-thumb" autoplay muted loop playsinline preload="metadata" title="straighten_rope_0">
+                                    <source src="static/videos/rlbench/eval_variations0/videos/straighten_rope_0_success_0.mp4" type="video/mp4">
+                                </video>
+                                <div class="exec-caption">straighten rope</div>
+                            </div>
+
+                            <div class="exec-item">
+                                <video class="exec-thumb" autoplay muted loop playsinline preload="metadata" title="turn_oven_on_0">
+                                    <source src="static/videos/rlbench/eval_variations0/videos/turn_oven_on_0_success_0.mp4" type="video/mp4">
+                                </video>
+                                <div class="exec-caption">turn oven on</div>
+                            </div>
+                        </div>
+
+                        <!-- 第二部分：basketball_in_hoop 在不同设定（0..14）下，每个设定占一列；第一项（0）已在上面重复显示，但也在此行列出以保持行列对应 -->
+                        <h3 class="title is-5" style="margin-top: 22px; margin-bottom: 12px;">basketball in hoop under different perturbations</h3>
+
+                        <!-- 使用多行布局，当列过多可横向滚动 -->
+                        <div style="overflow-x:auto; padding: 6px 0;">
+                            <div class="exec-grid" style="padding: 6px;">
+                                <!-- 生成 0 .. 14 的 15 个设定 -->
+
+                                <div class="exec-item">
+                                    <video class="exec-thumb" autoplay muted loop playsinline preload="metadata" title="basketball_in_hoop_0">
+                                        <source src="static/videos/rlbench/eval_variations0/videos/basketball_in_hoop_0_success_0.mp4" type="video/mp4">
+                                    </video>
+                                    <div class="exec-caption">No perturbation</div>
+                                </div>
+
+                                <div class="exec-item">
+                                    <video class="exec-thumb" autoplay muted loop playsinline preload="metadata" title="basketball_in_hoop_1">
+                                        <source src="static/videos/rlbench/eval_variations1/videos/basketball_in_hoop_1_success_0.mp4" type="video/mp4">
+                                    </video>
+                                    <div class="exec-caption">All perturbations</div>
+                                </div>
+
+                                <div class="exec-item">
+                                    <video class="exec-thumb" autoplay muted loop playsinline preload="metadata" title="basketball_in_hoop_2">
+                                        <source src="static/videos/rlbench/eval_variations2/videos/basketball_in_hoop_2_success_0.mp4" type="video/mp4">
+                                    </video>
+                                    <div class="exec-caption">MO Color</div>
+                                </div>
+
+                                <div class="exec-item">
+                                    <video class="exec-thumb" autoplay muted loop playsinline preload="metadata" title="basketball_in_hoop_3">
+                                        <source src="static/videos/rlbench/eval_variations3/videos/basketball_in_hoop_3_success_0.mp4" type="video/mp4">
+                                    </video>
+                                    <div class="exec-caption">RO Color</div>
+                                </div>
+
+                                <div class="exec-item">
+                                    <video class="exec-thumb" autoplay muted loop playsinline preload="metadata" title="basketball_in_hoop_4">
+                                        <source src="static/videos/rlbench/eval_variations4/videos/basketball_in_hoop_4_success_0.mp4" type="video/mp4">
+                                    </video>
+                                    <div class="exec-caption">MO Texture</div>
+                                </div>
+
+
+                                <div class="exec-item">
+                                    <video class="exec-thumb" autoplay muted loop playsinline preload="metadata" title="basketball_in_hoop_6">
+                                        <source src="static/videos/rlbench/eval_variations6/videos/basketball_in_hoop_6_success_0.mp4" type="video/mp4">
+                                    </video>
+                                    <div class="exec-caption">MO Size</div>
+                                </div>
+
+                                <div class="exec-item">
+                                    <video class="exec-thumb" autoplay muted loop playsinline preload="metadata" title="basketball_in_hoop_7">
+                                        <source src="static/videos/rlbench/eval_variations7/videos/basketball_in_hoop_7_success_0.mp4" type="video/mp4">
+                                    </video>
+                                    <div class="exec-caption">RO Size</div>
+                                </div>
+
+                                <div class="exec-item">
+                                    <video class="exec-thumb" autoplay muted loop playsinline preload="metadata" title="basketball_in_hoop_8">
+                                        <source src="static/videos/rlbench/eval_variations8/videos/basketball_in_hoop_8_success_0.mp4" type="video/mp4">
+                                    </video>
+                                    <div class="exec-caption">Light Color</div>
+                                </div>
+
+                                <div class="exec-item">
+                                    <video class="exec-thumb" autoplay muted loop playsinline preload="metadata" title="basketball_in_hoop_9">
+                                        <source src="static/videos/rlbench/eval_variations9/videos/basketball_in_hoop_9_success_0.mp4" type="video/mp4">
+                                    </video>
+                                    <div class="exec-caption">Table Color</div>
+                                </div>
+
+                                <div class="exec-item">
+                                    <video class="exec-thumb" autoplay muted loop playsinline preload="metadata" title="basketball_in_hoop_10">
+                                        <source src="static/videos/rlbench/eval_variations10/videos/basketball_in_hoop_10_success_0.mp4" type="video/mp4">
+                                    </video>
+                                    <div class="exec-caption">Table Texture</div>
+                                </div>
+
+                                <div class="exec-item">
+                                    <video class="exec-thumb" autoplay muted loop playsinline preload="metadata" title="basketball_in_hoop_11">
+                                        <source src="static/videos/rlbench/eval_variations11/videos/basketball_in_hoop_11_success_0.mp4" type="video/mp4">
+                                    </video>
+                                    <div class="exec-caption">Distractor Object</div>
+                                </div>
+
+                                <div class="exec-item">
+                                    <video class="exec-thumb" autoplay muted loop playsinline preload="metadata" title="basketball_in_hoop_12">
+                                        <source src="static/videos/rlbench/eval_variations12/videos/basketball_in_hoop_12_success_0.mp4" type="video/mp4">
+                                    </video>
+                                    <div class="exec-caption">Background Texture</div>
+                                </div>
+
+
+                                <div class="exec-item">
+                                    <video class="exec-thumb" autoplay muted loop playsinline preload="metadata" title="basketball_in_hoop_14">
+                                        <source src="static/videos/rlbench/eval_variations14/videos/basketball_in_hoop_14_success_0.mp4" type="video/mp4">
+                                    </video>
+                                    <div class="exec-caption">Camera Pose</div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+    </section>
+
+
+    <section class="section hero is-small">
+        <div class="container is-max-desktop">
+            <div class="columns is-centered has-text-centered">
+                <div class="column is-four-fifths">
+                    <h2 class="title is-3">Real-world Experiments</h2>
+
+                    <div class="figure-row">
+                        <div class="figure-text">
+                            <p>
+                                In real-world, we study two manipulation tasks, a common <em>'pick and place bear'</em> task and a high-precision <em>'plug in the charging cable'</em> task.
+                                <br><br>
+                                <strong>Pick and place bear:</strong> The teddy bear is placed facing any direction, and the robot needs to pick it up and place it in a cardboard box to complete the task. In this task, we introduced various perturbations, including Light Change, MO Texture, Distractor Objects, and the combined effect of all these disturbances.
+                                <br><br>
+                                <strong>Plug in the charging cable:</strong> The robot needs to pick up a USB Type-A charging cable, accurately align it with the 14 mm * 6 mm receptacle on the charger, and precisely insert it.
+                            </p>
+                        </div>
+
+                        <figure class="figure-image">
+                            <img src="static/images/real_world_scene.png" alt="Real world scene" />
+                            <figcaption>Real-world scenes for the two manipulation tasks.</figcaption>
+                        </figure>
+                    </div>
+
+                    <div class="content has-text-justified" style="text-align: center; margin-bottom: 3px;">
+                        ✅ <span style="font-weight: bold;">HyperMVP: pick and place bear</span>
+                    </div>
+                    <!-- ------------ Video 滚动容器 ------------ -->
+                    <div class="video-row-container" style="display: flex; justify-content: space-between; width: 100%; margin: 10px 0;">
+                        <div class="video-suite" style="position: relative; width: 100%;">
+                            <div class="video-scroll-container" style="width: 100%; overflow-x: auto; white-space: nowrap; border: 1px solid #ddd;">
+                                <div class="video-wrapper" style="display: inline-flex; padding: 7px;">
+
+                                    <div class="video-item" style="margin-right: 15px; min-width: 320px;">
+                                        <video class="fast-video" controls autoplay muted loop width="320" height="auto" title="pick_dart_and_insert_bullseye">
+                                            <source src="static/videos/real-world/pick bear/pick-bear1.webm" type="video/webm">
+                                        </video>
+                                    </div>
+
+                                    <div class="video-item" style="margin-right: 15px; min-width: 320px;">
+                                        <video class="fast-video" controls autoplay muted loop width="320" height="auto" title="pick_dart_and_insert_bullseye">
+                                            <source src="static/videos/real-world/pick bear/pick-bear2.webm" type="video/webm">
+                                        </video>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- <div class="video-title" style="text-align: center; margin-top: 10px; font-weight: bold;">✅ RVAF(RLBench)</div> -->
+                        </div>
+
+                    </div>
+
+                    <!-- press_the_toy_switch -->
+                    <div class="content has-text-justified" style="text-align: center; margin-bottom: 3px;">
+                        ✅ <span style="font-weight: bold;">HyperMVP: pick and place bear under perturbations</span>
+                    </div>
+                    <!-- ------------ Video 滚动容器 ------------ -->
+                    <div class="video-row-container" style="display: flex; justify-content: space-between; width: 100%; margin: 10px 0;">
+                        <div class="video-suite" style="position: relative; width: 100%;">
+                            <div class="video-scroll-container" style="width: 100%; overflow-x: auto; white-space: nowrap; border: 1px solid #ddd;">
+                                <div class="video-wrapper" style="display: inline-flex; padding: 7px;">
+
+                                    <div class="video-item" style="margin-right: 10px; min-width: 220px;">
+                                        <video class="fast-video" controls autoplay muted loop width="220" height="auto" title="press_the_toy_switch">
+                                            <source src="static/videos/real-world/generalization/MO-texture.webm" type="video/webm">
+                                        </video>
+                                        <div class="exec-caption"><span style="font-weight: bold;">MO Texture</span><br>The teddy bear's clothes<br>were changed.</div>
+                                    </div>
+
+                                    <div class="video-item" style="margin-right: 10px; min-width: 220px;">
+                                        <video class="fast-video" controls autoplay muted loop width="220" height="auto" title="press_the_toy_switch">
+                                            <source src="static/videos/real-world/generalization/light-color.webm" type="video/webm">
+                                        </video>
+                                        <div class="exec-caption"><span style="font-weight: bold;">Light Color</span><br>The color of the light<br>turned red.</div>
+                                    </div>
+
+                                    <div class="video-item" style="margin-right: 10px; min-width: 220px;">
+                                        <video class="fast-video" controls autoplay muted loop width="220" height="auto" title="press_the_toy_switch">
+                                            <source src="static/videos/real-world/generalization/distractor-object.webm" type="video/webm">
+                                        </video>
+                                        <div class="exec-caption"><span style="font-weight: bold;">Distractor Object</span><br>Task-irrelevant objects<br>were added to the environment.</div>
+                                    </div>
+
+                                    <div class="video-item" style="margin-right: 10px; min-width: 220px;">
+                                        <video class="fast-video" controls autoplay muted loop width="220" height="auto title="press_the_toy_switch">
+                                            <source src="static/videos/real-world/generalization/all-perturbations.webm" type="video/webm">
+                                        </video>
+                                        <div class="exec-caption">Combine all the perturbations<br>on the left</div>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <!-- <div class="video-title" style="text-align: center; margin-top: 10px; font-weight: bold;">✅ RVAF(RLBench)</div> -->
+                        </div>
+                    </div>
+
+                    <!-- Generalization and Robustness -->
+                    <div class="content has-text-justified" style="text-align: center; margin-bottom: 3px;">
+                        ✅ <span style="font-weight: bold;">HyperMVP: plug in the charging cable</span>
+                    </div>
+                    <!-- ------------ Video 滚动容器 ------------ -->
+                    <div class="video-row-container" style="display: flex; justify-content: space-between; width: 100%; margin: 10px 0;">
+                        <div class="video-suite" style="position: relative; width: 100%;">
+                            <div class="video-scroll-container" style="width: 100%; overflow-x: auto; white-space: nowrap; border: 1px solid #ddd;">
+                                <div class="video-wrapper" style="display: inline-flex; padding: 7px;">
+
+                                    <div class="video-item" style="margin-right: 15px; min-width: 320px;">
+                                        <video class="fast-video" controls autoplay muted loop width="320" height="auto" title="pick_dart_and_insert_bullseye">
+                                            <source src="static/videos/real-world/plug in the charger/plug_in_the_charger1.mp4" type="video/mp4">
+                                        </video>
+                                    </div>
+
+                                    <div class="video-item" style="margin-right: 15px; min-width: 320px;">
+                                        <video class="fast-video" controls autoplay muted loop width="320" height="auto" title="pick_dart_and_insert_bullseye">
+                                            <source src="static/videos/real-world/plug in the charger/plug_in_the_charger2.mp4" type="video/mp4">
+                                            </vide
+                                    </div>
+                                </div>
+                                <!-- <div class="video-title" style="text-align: center; margin-top: 10px; font-weight: bold;">✅ RVAF(RLBench)</div> -->
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+    </section>
+
+    <!-- End paper experiments -->
+    <!-- Image carousel -->
+    <!-- <section class="hero is-small">
+      <div class="hero-body">
+        <div class="container">
+          <div id="results-carousel" class="carousel results-carousel">
+           <div class="item"> -->
+    <!-- Your image here -->
+    <!-- <img src="static/images/carousel1.jpg" alt="MY ALT TEXT"/>
+      <h2 class="subtitle has-text-centered">
+        First image description.
+      </h2>
+    </div>
+    <div class="item"> -->
+    <!-- Your image here -->
+    <!-- <img src="static/images/carousel2.jpg" alt="MY ALT TEXT"/>
+      <h2 class="subtitle has-text-centered">
+        Second image description.
+      </h2>
+    </div>
+    <div class="item"> -->
+    <!-- Your image here -->
+    <!-- <img src="static/images/carousel3.jpg" alt="MY ALT TEXT"/>
+       <h2 class="subtitle has-text-centered">
+        Third image description.
+      </h2>
+    </div>
+    <div class="item"> -->
+    <!-- Your image here -->
+    <!-- <img src="static/images/carousel4.jpg" alt="MY ALT TEXT"/>
+          <h2 class="subtitle has-text-centered">
+            Fourth image description.
+          </h2>
+        </div>
+      </div>
+    </div>
+    </div>
+    </section> -->
+    <!-- End image carousel -->
+    <!-- Youtube video -->
+    <!-- <section class="hero is-small is-light">
+      <div class="hero-body">
+        <div class="container"> -->
+    <!-- Paper video. -->
+    <!-- <h2 class="title is-3">Video Presentation</h2>
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+
+        <div class="publication-video"> -->
+    <!-- Youtube embed code here -->
+    <!-- <iframe src="https://www.youtube.com/embed/JkaxUblCGz0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
-  </div>
-</section>
-
-
-<!-- Teaser video-->
-<!-- <section class="hero teaser">
-  <div class="container is-max-desktop">
-    <div class="hero-body">
-      <video poster="" id="tree" autoplay controls muted loop height="100%"> -->
-        <!-- Your video here -->
-        <!-- <source src="static/videos/banner_video.mp4"
+    </section> -->
+    <!-- End youtube video -->
+    <!-- Video carousel -->
+    <!-- <section class="hero is-small">
+      <div class="hero-body">
+        <div class="container">
+          <h2 class="title is-3">Another Carousel</h2>
+          <div id="results-carousel" class="carousel results-carousel">
+            <div class="item item-video1">
+              <video poster="" id="video1" autoplay controls muted loop height="100%"> -->
+    <!-- Your video file here -->
+    <!-- <source src="static/videos/carousel1.mp4"
         type="video/mp4">
       </video>
-      <h2 class="subtitle has-text-centered">
-        Aliquam vitae elit ullamcorper tellus egestas pellentesque. Ut lacus tellus, maximus vel lectus at, placerat pretium mi. Maecenas dignissim tincidunt vestibulum. Sed consequat hendrerit nisl ut maximus. 
-      </h2>
     </div>
-  </div>
-</section> -->
-<!-- End teaser video -->
-
-<!-- Paper abstract -->
-<section class="section hero is-light">
-  <div class="container is-max-desktop">
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-3">Abstract</h2>
-        <div class="content has-text-justified">
-          <p>
-            Multi-view robotic manipulation methods with the attention mechanism have recently achieved significant progress in both training efficiency and task performance. 
-            However, the inherent redundancy, occlusion, and viewpoint dependency in robotic view images often lead to severe attention drift. 
-            To address this challenge, we propose AmpAttention, a novel attention mechanism inspired by differential amplifiers in analog circuits. 
-            It aims to suppress attention noise and capture high signal-to-noise ratio signals for more reliable perception. 
-            Based on this, we introduce the RVAF model, which integrates task-guided intra-view and inter-view AmpAttention. 
-            Compared to previous state-of-the-art methods, RVAF achieves the optimal average success rate across 18 RLBench tasks (249 variations) while reducing training time by 33.3%. 
-            RVAF also demonstrates strong potential in real-world high-precision tasks, exemplified by its ability to pick up a dart and accurately insert it into the red bullseye. 
-            Furthermore, we extend RVAF to RVAF++ by incorporating the SAM2 image encoder. RVAF++ achieves substantial improvements on high-precision tasks, increasing the success rate on the 'insert peg' task from 40% to 91%. 
-          </p>
-        </div>
-      </div>
+    <div class="item item-video2">
+      <video poster="" id="video2" autoplay controls muted loop height="100%"> -->
+    <!-- Your video file here -->
+    <!-- <source src="static/videos/carousel2.mp4"
+        type="video/mp4">
+      </video>
     </div>
-  </div>
-</section>
-<!-- End paper abstract -->
-
-
-<!-- Paper intro & method -->
-<section class="section hero is-small">
-  <div class="container is-max-desktop">
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-3">Introduction</h2>
-
-<!--         <div style="text-align: center;">
-          <img src="static/images/introduction.png" alt="Description of the image" style="width: 37%; height: auto;">
-          <figcaption>Comparison of attention distributions between standard attention and AmpAttention in robotic view images.</figcaption>
-        </div> -->
-        <div style="display: flex; justify-content: center; align-items: flex-start; gap: 20px; text-align: center;">
-          <figure style="width: 37%; margin: 0;">
-            <img src="static/images/introduction.png" alt="AmpAttention vs standard attention" style="width: 100%; height: auto;">
-            <figcaption>Comparison of attention distributions between standard attention and AmpAttention in robotic view images.</figcaption>
-          </figure>
-
-          <figure style="width: 37%; margin: 0;">
-            <img src="static/images/theory.png" alt="Differential amplifier derivation" style="width: 100%; height: auto;">
-            <figcaption>Derivation of the differential amplifier.</figcaption>
-          </figure>
-        </div>
-
-
-        <div class="content has-text-justified">
-          <p>
-            <ul>
-              <li>We propose AmpAttention, a differential-amplifier-inspired mechanism that extracts high signal-to-noise task cues from robotic views.</li>
-              <li>We design a RVAF model, which integrates intra- and inter-view AmpAttention to enhance manipulation reasoning.</li>
-              <li>We extend RVAF to RVAF++ by incorporating the SAM2 image encoder, significantly improving high-precision manipulation performance.</li>
-              <li>We achieve strong results in both simulation and the real world, demonstrating task generalization, efficiency, and scalability.</li>
-            </ul>
-          </p>
-        </div>
-        
-        <!-- <br> -->
-
-        <!-- <div style="text-align: left;">
-        <p>Vanilla Behavior Cloning Loss:</p>
-        </div>
-        <div style="text-align: center;">
-        \[
-        \mathcal{L}_{\mathrm{BC}}=\mathbb{E}_{\left(x_t, a_t\right) \sim \mathcal{D}_e}\left[\left\|\pi\left(x_t\right)-a_t\right\|^2\right].
-        \]
-        </div> -->
-        <!-- <div style="text-align: left;">
-        <p>Behavior Cloning with Information Bottleneck (BC-IB):</p>
-        </div>
-        <div style="text-align: center;">
-        \[
-        \mathcal{L}_{\mathrm{BC-IB}}=\mathbb{E}_{(x_t, a_t) \sim \mathcal{D}_e}\left[\beta I(x_t, z_t) + \|\pi(x_t)-a_t\|^2\right].
-        \]
-        </div> -->
-
-        <!-- <div style="text-align: left;">
-        We apply these two optimization objectives to the commonly used BC algorithms. We categorize existing BC algorithms based on the fusion method into two types: spatial fusion and temporal fusion.
-        </div> -->
-        <!-- <div style="text-align: center;">
-          <img src="static/images/model.png" alt="Description of the image" style="width: 100%; height: auto;">
-        </div> -->
-      </div>
-    </div>
-  </div>
-</section>
-<!-- End paper intro & method -->
-
-
-
-<!-- Paper experiment -->
-<section class="section hero is-small">
-  <div class="container is-max-desktop">
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-3">Simulation Experiments</h2>
-
-        <div class="content has-text-justified" style="text-align: center; margin-bottom: 0;">
-          Multi-task performance on RLBench. We report success rates (%) for 18 RLBench tasks, along with the mean success rate (%) and training time (days).
-        </div>
-        
-        <div style="text-align: center;">
-            <!-- <p style="margin-bottom: 10px;">
-              Multi-task performance on RLBench. We report success rates (%) for 18 RLBench tasks, along with the mean success rate (%) and training time (days).
-            </p> -->
-          <img src="static/images/rlbench_tasks_results.png" alt="Description of the image" style="width: 95%; height: auto;">
-        </div>
-   
-        <!-- <div class="content has-text-justified" style="text-align: center;">
-          Although only MetaWorld is strictly a robot manipulation benchmark, yet we include all tasks to comprehensively demonstrate the effectiveness of IB.
-        </div> -->
-        <div class="content has-text-justified" style="text-align: center; margin-bottom: 0;">
-          Success and failure cases of RVAF and RVAF++ on RLBench tasks.
-        </div>
-        <!-- Video 滚动容器 -->
-        <div class="video-row-container" style="display: flex; justify-content: space-between; width: 100%; margin: 10px 0;">
-          <div class="video-suite" style="position: relative; width: 48%;">
-            <div class="video-scroll-container" style="width: 100%; overflow-x: auto; white-space: nowrap; border: 1px solid #ddd;">
-              <div class="video-wrapper" style="display: inline-flex; padding: 7px;">
-
-                <div class="video-item"  style="margin-right: 15px; min-width: 320px;">
-                    <video class="fast-video" controls autoplay muted loop width="320" height="240" title="close_jar">
-                      <source src="static/videos/rlbench/rvaf/close_jar_success_3.mp4" type="video/mp4">
-                    </video>
-                </div>
-
-                <div class="video-item"  style="margin-right: 15px; min-width: 320px;">
-                  <video class="fast-video" controls autoplay muted loop width="320" height="240" title="meat_off_grill">
-                    <source src="static/videos/rlbench/rvaf/meat_off_grill_success_3.mp4" type="video/mp4">
-                  </video>
-                </div>
-
-                <div class="video-item" style="margin-right: 15px; min-width: 320px;">
-                  <video class="fast-video" controls autoplay muted loop width="320" height="240" title="open_drawer">
-                    <source src="static/videos/rlbench/rvaf/open_drawer_success_3.mp4" type="video/mp4">
-                  </video>
-                </div>
-
-                <div class="video-item" style="margin-right: 15px; min-width: 320px;">
-                  <video class="fast-video" controls autoplay muted loop width="320" height="240" title="place_wine_at_rack_location">
-                    <source src="static/videos/rlbench/rvaf/place_wine_at_rack_location_success_3.mp4" type="video/mp4">
-                  </video>
-                </div>
-
-                <div class="video-item" style="margin-right: 15px; min-width: 320px;">
-                  <video class="fast-video" controls autoplay muted loop width="320" height="240" title="put_money_in_safe">
-                    <source src="static/videos/rlbench/rvaf/put_money_in_safe_success_3.mp4" type="video/mp4">
-                  </video>
-                </div>
-
-                <div class="video-item" style="margin-right: 15px; min-width: 320px;">
-                  <video class="fast-video" controls autoplay muted loop width="320" height="240" title="put_groceries_in_cupboard">
-                    <source src="static/videos/rlbench/rvaf/put_groceries_in_cupboard_success_3.mp4" type="video/mp4">
-                  </video>
-                </div>
-
-                <div class="video-item" style="margin-right: 15px; min-width: 320px;">
-                  <video class="fast-video" controls autoplay muted loop width="320" height="240" title="sweep_to_dustpan_of_size">
-                    <source src="static/videos/rlbench/rvaf/sweep_to_dustpan_of_size_success_3.mp4" type="video/mp4">
-                  </video>
-                </div>
-
-                <div class="video-item" style="margin-right: 15px; min-width: 320px;">
-                  <video class="fast-video" controls autoplay muted loop width="320" height="240" title="turn_tap">
-                    <source src="static/videos/rlbench/rvaf/turn_tap_success_3.mp4" type="video/mp4">
-                  </video>
-                </div>
-
-                <div class="video-item" style="margin-right: 15px; min-width: 320px;">
-                  <video class="fast-video" controls autoplay muted loop width="320" height="240" title="reach_and_drag">
-                    <source src="static/videos/rlbench/rvaf/reach_and_drag_success_3.mp4" type="video/mp4">
-                  </video>
-                </div>
-
-              </div>
+    <div class="item item-video3">
+      <video poster="" id="video3" autoplay controls muted loop height="100%">\ -->
+    <!-- Your video file here -->
+    <!-- <source src="static/videos/carousel3.mp4"
+                type="video/mp4">
+              </video>
             </div>
-            <div class="video-title" style="text-align: center; margin-top: 10px; font-weight: bold;">✅ RVAF(RLBench)</div>
-          </div>
-
-          <div class="video-suite" style="position: relative; width: 48%;">
-            <div class="video-scroll-container" style="width: 100%; overflow-x: auto; white-space: nowrap; border: 1px solid #ddd;">
-              <div class="video-wrapper" style="display: inline-flex; padding: 7px;">
-
-                <div class="video-item"  style="margin-right: 15px; min-width: 320px;">
-                    <video class="fast-video" controls autoplay muted loop width="320" height="240" title="insert_onto_square_peg">
-                      <source src="static/videos/rlbench/rvaf++/insert_onto_square_peg_success_3.mp4" type="video/mp4">
-                    </video>
-                </div>
-
-                <div class="video-item"  style="margin-right: 15px; min-width: 320px;">
-                  <video class="fast-video" controls autoplay muted loop width="320" height="240" title="light_bulb_in">
-                    <source src="static/videos/rlbench/rvaf++/light_bulb_in_success_3.mp4" type="video/mp4">
-                  </video>
-                </div>
-
-                <div class="video-item" style="margin-right: 15px; min-width: 320px;">
-                  <video class="fast-video" controls autoplay muted loop width="320" height="240" title="place_shape_in_shape_sorter">
-                    <source src="static/videos/rlbench/rvaf++/place_shape_in_shape_sorter_success_0.mp4" type="video/mp4">
-                  </video>
-                </div>
-
-                <div class="video-item" style="margin-right: 15px; min-width: 320px;">
-                  <video class="fast-video" controls autoplay muted loop width="320" height="240" title="put_groceries_in_cupboard">
-                    <source src="static/videos/rlbench/rvaf++/put_groceries_in_cupboard_success_0.mp4" type="video/mp4">
-                  </video>
-                </div>
-
-                <div class="video-item" style="margin-right: 15px; min-width: 320px;">
-                  <video class="fast-video" controls autoplay muted loop width="320" height="240" title="stack_blocks">
-                    <source src="static/videos/rlbench/rvaf++/stack_blocks_success_3.mp4" type="video/mp4">
-                  </video>
-                </div>
-
-                <div class="video-item" style="margin-right: 15px; min-width: 320px;">
-                  <video class="fast-video" controls autoplay muted loop width="320" height="240" title="stack_cups">
-                    <source src="static/videos/rlbench/rvaf++/stack_cups_success_3.mp4" type="video/mp4">
-                  </video>
-                </div>
-
-                <div class="video-item" style="margin-right: 15px; min-width: 320px;">
-                  <video class="fast-video" controls autoplay muted loop width="320" height="240" title="place_wine_at_rack_location">
-                    <source src="static/videos/rlbench/rvaf++/place_wine_at_rack_location_success_3.mp4" type="video/mp4">
-                  </video>
-                </div>
-                
-              </div>
-            </div>
-            <div class="video-title" style="text-align: center; margin-top: 10px; font-weight: bold;">✅ RVAF++(RLBench)</div>
-          </div>
-        </div> 
-
-
-        <div class="video-row-container" style="display: flex; justify-content: space-between; width: 100%; margin: 10px 0;">
-          <div class="video-suite" style="position: relative; width: 48%;">
-            <div class="video-scroll-container" style="width: 100%; overflow-x: auto; white-space: nowrap; border: 1px solid #ddd;">
-              <div class="video-wrapper" style="display: inline-flex; padding: 7px;">
-
-                <div class="video-item"  style="margin-right: 15px; min-width: 320px;">
-                    <video class="fast-video" controls autoplay muted loop width="320" height="240" title="insert_onto_square_peg">
-                      <source src="static/videos/rlbench/rvaf/insert_onto_square_peg_fail_0.mp4" type="video/mp4">
-                    </video>
-                </div>
-
-                <div class="video-item"  style="margin-right: 15px; min-width: 320px;">
-                  <video class="fast-video" controls autoplay muted loop width="320" height="240" title="place_cups">
-                    <source src="static/videos/rlbench/rvaf/place_cups_fail_0.mp4" type="video/mp4">
-                  </video>
-                </div>
-
-                <div class="video-item" style="margin-right: 15px; min-width: 320px;">
-                  <video class="fast-video" controls autoplay muted loop width="320" height="240" title="place_shape_in_shape_sorter">
-                    <source src="static/videos/rlbench/rvaf/place_shape_in_shape_sorter_fail_0.mp4" type="video/mp4">
-                  </video>
-                </div>
-
-                <div class="video-item" style="margin-right: 15px; min-width: 320px;">
-                  <video class="fast-video" controls autoplay muted loop width="320" height="240" title="put_groceries_in_cupboard">
-                    <source src="static/videos/rlbench/rvaf/put_groceries_in_cupboard_fail_0.mp4" type="video/mp4">
-                  </video>
-                </div>
-
-                <div class="video-item" style="margin-right: 15px; min-width: 320px;">
-                  <video class="fast-video" controls autoplay muted loop width="320" height="240" title="stack_blocks">
-                    <source src="static/videos/rlbench/rvaf/stack_blocks_fail_0.mp4" type="video/mp4">
-                  </video>
-                </div>
-
-                <div class="video-item" style="margin-right: 15px; min-width: 320px;">
-                  <video class="fast-video" controls autoplay muted loop width="320" height="240" title="stack_cups">
-                    <source src="static/videos/rlbench/rvaf/stack_cups_fail_0.mp4" type="video/mp4">
-                  </video>
-                </div>
-
-              </div>
-            </div>
-            <div class="video-title" style="text-align: center; margin-top: 10px; font-weight: bold;">❌ RVAF(RLBench)</div>
-          </div>
-
-          <div class="video-suite" style="position: relative; width: 48%;">
-            <div class="video-scroll-container" style="width: 100%; overflow-x: auto; white-space: nowrap; border: 1px solid #ddd;">
-              <div class="video-wrapper" style="display: inline-flex; padding: 7px;">
-
-                <div class="video-item"  style="margin-right: 15px; min-width: 320px;">
-                    <video class="fast-video" controls autoplay muted loop width="320" height="240" title="place_cups">
-                      <source src="static/videos/rlbench/rvaf++/place_cups_fail_0.mp4" type="video/mp4">
-                    </video>
-                </div>
-
-                <div class="video-item"  style="margin-right: 15px; min-width: 320px;">
-                  <video class="fast-video" controls autoplay muted loop width="320" height="240" title="place_shape_in_shape_sorter">
-                    <source src="static/videos/rlbench/rvaf++/place_shape_in_shape_sorter_fail_0.mp4" type="video/mp4">
-                  </video>
-                </div>
-
-                <div class="video-item" style="margin-right: 15px; min-width: 320px;">
-                  <video class="fast-video" controls autoplay muted loop width="320" height="240" title="slide_block_to_color_target">
-                    <source src="static/videos/rlbench/rvaf++/slide_block_to_color_target_fail_0.mp4" type="video/mp4">
-                  </video>
-                </div>
-
-                <div class="video-item" style="margin-right: 15px; min-width: 320px;">
-                  <video class="fast-video" controls autoplay muted loop width="320" height="240" title="stack_blocks">
-                    <source src="static/videos/rlbench/rvaf++/stack_blocks_fail_0.mp4" type="video/mp4">
-                  </video>
-                </div>
-
-                <div class="video-item" style="margin-right: 15px; min-width: 320px;">
-                  <video class="fast-video" controls autoplay muted loop width="320" height="240" title="stack_cups">
-                    <source src="static/videos/rlbench/rvaf++/stack_cups_fail_0.mp4" type="video/mp4">
-                  </video>
-                </div>
-                
-              </div>
-            </div>
-            <div class="video-title" style="text-align: center; margin-top: 10px; font-weight: bold;">❌ RVAF++(RLBench)</div>
-          </div>
-        </div> 
-
-
-
-    </div>
-  </div>
-</section>
-
-<section class="section hero is-small">
-  <div class="container is-max-desktop">
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-3">Analysis Experiments</h2>
-
-        <div style="text-align: left; margin-bottom: 10px;">
-          1. Illustration of attention heatmaps from the front and right views for different models across different task scenarios.
-        </div>
-        
-        <div class="image-row-container" style="display: flex; justify-content: center; gap: 20px;">
-          <!-- RVAF vs Baseline -->
-          <div class="image-suite" style="text-align: center; width: 50%; box-shadow: 0px 4px 6px rgba(0,0,0,0.1); border-radius: 10px; padding: 20px;">
-            <div class="image-scroll-container" style="display: flex; flex-direction: row; gap: 20px; justify-content: center;">
-              <!-- Group: Baseline -->
-              <div style="display: flex; flex-direction: column; align-items: center;">
-                <div class="image-wrapper" style="display: flex; flex-direction: column; justify-content: space-between; gap: 20px;">
-                  <!-- Task 1: push_buttons -->
-                  <div class="image-item" data-task="push_buttons" style="position: relative; display: flex; flex-direction: row; gap: 10px; justify-content: center;">
-                    <div class="task-title" style="position: absolute; top: 0px; left: 50%; transform: translateX(-50%); font-size: 1em; color: white; background: rgba(0, 0, 0, 0.5); padding: 5px 10px; border-radius: 5px;">push_buttons</div>
-                    <img src="static/images/baseline_push_buttons_front.png" alt="front" title="front" style="width: 100%; max-width: 120px; height: auto; border-radius: 10px;">
-                    <img src="static/images/baseline_push_buttons_right.png" alt="right" title="right" style="width: 100%; max-width: 120px; height: auto; border-radius: 10px;">
-                  </div>
-                  <!-- Task 2: stack_cups -->
-                  <div class="image-item" data-task="stack_cups" style="position: relative; display: flex; flex-direction: row; gap: 10px; justify-content: center;">
-                    <div class="task-title" style="position: absolute; top: 0px; left: 50%; transform: translateX(-50%); font-size: 1em; color: white; background: rgba(0, 0, 0, 0.5); padding: 5px 10px; border-radius: 5px;">stack_cups</div>
-                    <img src="static/images/baseline_stack_cups_front.png" alt="front" title="front" style="width: 100%; max-width: 120px; height: auto; border-radius: 10px;">
-                    <img src="static/images/baseline_stack_cups_right.png" alt="right" title="right" style="width: 100%; max-width: 120px; height: auto; border-radius: 10px;">
-                  </div>
-                </div>
-                <div class="image-label" style="margin-top: 10px; font-weight: bold; font-size: 1.1em;">Baseline</div>
-              </div>
-              <div style="width: 3px;"></div> 
-              <!-- Group: RVAF -->
-              <div style="display: flex; flex-direction: column; align-items: center;">
-                <div class="image-wrapper" style="display: flex; flex-direction: column; justify-content: space-between; gap: 20px;">
-                  <!-- Task 1: push_buttons -->
-                  <div class="image-item" data-task="push_buttons" style="position: relative; display: flex; flex-direction: row; gap: 10px; justify-content: center;">
-                    <div class="task-title" style="position: absolute; top: 0px; left: 50%; transform: translateX(-50%); font-size: 1em; color: white; background: rgba(0, 0, 0, 0.5); padding: 5px 10px; border-radius: 5px;">push_buttons</div>
-                    <img src="static/images/rvaf_push_buttons_front.png" alt="front" title="front" style="width: 100%; max-width: 120px; height: auto; border-radius: 10px;">
-                    <img src="static/images/rvaf_push_buttons_right.png" alt="right" title="right" style="width: 100%; max-width: 120px; height: auto; border-radius: 10px;">
-                  </div>
-                  <!-- Task 2: stack_cups -->
-                  <div class="image-item" data-task="stack_cups" style="position: relative; display: flex; flex-direction: row; gap: 10px; justify-content: center;">
-                    <div class="task-title" style="position: absolute; top: 0px; left: 50%; transform: translateX(-50%); font-size: 1em; color: white; background: rgba(0, 0, 0, 0.5); padding: 5px 10px; border-radius: 5px;">stack_cups</div>
-                    <img src="static/images/rvaf_stack_cups_front.png" alt="front" title="front" style="width: 100%; max-width: 120px; height: auto; border-radius: 10px;">
-                    <img src="static/images/rvaf_stack_cups_right.png" alt="right" title="right" style="width: 100%; max-width: 120px; height: auto; border-radius: 10px;">
-                  </div>
-                </div>
-                <div class="image-label" style="margin-top: 10px; font-weight: bold; font-size: 1.1em;">RVAF</div>
-              </div>
-            </div>
-          </div>
-            <!-- <div class="image-title" style="font-size: 1.2em; font-weight: bold; margin-top: 10px; color: black;">RVAF</div> -->
-
-        
-          <!-- RVAF++ vs Baseline -->
-          <div class="image-suite" style="text-align: center; width: 50%; box-shadow: 0px 4px 6px rgba(0,0,0,0.1); border-radius: 10px; padding: 20px;">
-            <div class="image-scroll-container" style="display: flex; flex-direction: row; gap: 20px; justify-content: center;">
-              
-              <!-- Group: Baseline -->
-              <div style="display: flex; flex-direction: column; align-items: center;">
-                <div class="image-wrapper" style="display: flex; flex-direction: column; justify-content: space-between; gap: 20px;">
-                <!-- light_bulb_in -->
-                <div class="image-item" data-task="light_bulb_in" style="position: relative; display: flex; flex-direction: row; gap: 10px; justify-content: center;">
-                  <div class="task-title" style="position: absolute; top: 0px; left: 50%; transform: translateX(-50%); font-size: 1em; color: white; background: rgba(0, 0, 0, 0.5); padding: 5px 10px; border-radius: 5px;">light_bulb_in</div>
-                  <img src="static/images/baseline_light_bulb_front.png" alt="front" title="front" style="width: 100%; max-width: 120px; height: auto; border-radius: 10px;">
-                  <img src="static/images/baseline_light_bulb_right.png" alt="right" title="right" style="width: 100%; max-width: 120px; height: auto; border-radius: 10px;">
-                </div>
-                <!-- insert_onto_square  -->
-                <div class="image-item" data-task="insert_onto_square" style="position: relative; display: flex; flex-direction: row; gap: 10px; justify-content: center;">
-                  <div class="task-title" style="position: absolute; top: 0px; left: 50%; transform: translateX(-50%); font-size: 1em; color: white; background: rgba(0, 0, 0, 0.5); padding: 5px 10px; border-radius: 5px;">insert_onto_square</div>
-                  <img src="static/images/baseline_insert_square_front.png" alt="front" title="front" style="width: 100%; max-width: 120px; height: auto; border-radius: 10px;">
-                  <img src="static/images/baseline_insert_square_right.png" alt="right" title="right" style="width: 100%; max-width: 120px; height: auto; border-radius: 10px;">
-                </div>
-              </div>
-                <div class="image-label" style="margin-top: 10px; font-weight: bold; font-size: 1.1em;">Baseline</div>
-              </div>
-              
-              <div style="width: 3px;"></div> 
-              <!-- Group: RVAF++ -->
-              <div style="display: flex; flex-direction: column; align-items: center;">
-                <div class="image-wrapper" style="display: flex; flex-direction: column; justify-content: space-between; gap: 20px;">
-                <!-- light_bulb_in -->
-                <div class="image-item" data-task="light_bulb_in" style="position: relative; display: flex; flex-direction: row; gap: 10px; justify-content: center;">
-                  <div class="task-title" style="position: absolute; top: 0px; left: 50%; transform: translateX(-50%); font-size: 1em; color: white; background: rgba(0, 0, 0, 0.5); padding: 5px 10px; border-radius: 5px;">light_bulb_in</div>
-                  <img src="static/images/rvaf++_light_bulb_in_front.png" alt="front" title="front" style="width: 100%; max-width: 120px; height: auto; border-radius: 10px;">
-                  <img src="static/images/rvaf++_light_bulb_in_right.png" alt="right" title="right" style="width: 100%; max-width: 120px; height: auto; border-radius: 10px;">
-                </div>
-                <!-- insert_onto_square  -->
-                <div class="image-item" data-task="insert_onto_square" style="position: relative; display: flex; flex-direction: row; gap: 10px; justify-content: center;">
-                  <div class="task-title" style="position: absolute; top: 0px; left: 50%; transform: translateX(-50%); font-size: 1em; color: white; background: rgba(0, 0, 0, 0.5); padding: 5px 10px; border-radius: 5px;">insert_onto_square</div>
-                  <img src="static/images/rvaf++_insert_onto_square_front.png" alt="front" title="front" style="width: 100%; max-width: 120px; height: auto; border-radius: 10px;">
-                  <img src="static/images/rvaf++_insert_onto_square_right.png" alt="right" title="right" style="width: 100%; max-width: 120px; height: auto; border-radius: 10px;">
-                </div>
-              </div>
-                <div class="image-label" style="margin-top: 10px; font-weight: bold; font-size: 1.1em;">RVAF++</div>
-              </div>
-
-
-
-            </div>
-          </div>
-
-
-
-
-        </div>
-        
-
-        <div style="text-align: left; margin-bottom: 0px;">
-          2. Ablations of components.
-        </div>
-
-        <div style="text-align: center;">
-          <img src="static/images/ablation_components.png" alt="Description of the image" style="width: 95%; height: auto;">
-        </div>
-        <!-- <div style="text-align: left; margin-bottom: 10px; margin-top: 20px;" >
-          2. This also holds in the few-shot setting.
-        </div>
-        <div style="text-align: center;">
-          <img src="static/images/few-shot.png" alt="Description of the image" style="width: 100%; height: auto;">
-        </div>
-
-        <div style="text-align: left; margin-bottom: 10px; margin-top: 20px;" >
-          3. \( \beta \) is the Lagrange multiplier that balances the trade-off between the compression ability and the predictive power. Setting it to an appropriate value can achieve peak performance.
-        </div>
-        <div style="text-align: center;">
-          <img src="static/images/beta.png" alt="Description of the image" style="width: 50%; height: auto;">
-        </div> -->
-
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="section hero is-small">
-  <div class="container is-max-desktop">
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-3">Real-world Experiments</h2>
-        
-        <div class="content has-text-justified" style="text-align: center; margin-bottom: 7px;">
-          In real-world, we design two challenging tasks: 'press the toy switch' and 'pick dart and insert bullseye'. Each task supports diverse natural language descriptions.
-          <span style="font-weight: bold;">Press the toy switch:</span> The toy is placed at a random position. The robot must accurately press a 12mm × 6mm control switch on the toy using its gripper to complete the task. 
-                                The task is only considered successful if the toy visibly changes state in response to the interaction.
-          <span style="font-weight: bold;">Pick dart and insert bullseye:</span> The dart is placed at a random location. The robot is required to grasp the dart and insert it into the bullseye. The radius of the red bullseye is 6mm.
-          <span style="font-weight: bold;">Real-world videos play at 2x speed by default.</span>
-        </div>
-
-        <!-- pick_dart_and_insert_bullseye -->
-        <div class="content has-text-justified" style="text-align: center; margin-bottom: 3px;">
-          ✅ <span style="font-weight: bold;">RVAF: pick dart and insert bullseye</span>
-        </div>
-        <!-- ------------ Video 滚动容器 ------------ -->
-        <div class="video-row-container" style="display: flex; justify-content: space-between; width: 100%; margin: 10px 0;">
-          <div class="video-suite" style="position: relative; width: 100%;">
-            <div class="video-scroll-container" style="width: 100%; overflow-x: auto; white-space: nowrap; border: 1px solid #ddd;">
-              <div class="video-wrapper" style="display: inline-flex; padding: 7px;">
-
-                <div class="video-item"  style="margin-right: 15px; min-width: 320px;">
-                    <video class="fast-video" controls autoplay muted loop width="320" height="240" title="pick_dart_and_insert_bullseye">
-                      <source src="static/videos/real-world/success/pick/pick_1.mp4" type="video/mp4">
-                    </video>
-                </div>
-
-                <div class="video-item"  style="margin-right: 15px; min-width: 320px;">
-                  <video class="fast-video" controls autoplay muted loop width="320" height="240" title="pick_dart_and_insert_bullseye">
-                    <source src="static/videos/real-world/success/pick/pick_2.mp4" type="video/mp4">
-                  </video>
-                </div>
-
-                <div class="video-item"  style="margin-right: 15px; min-width: 320px;">
-                  <video class="fast-video" controls autoplay muted loop width="320" height="240" title="pick_dart_and_insert_bullseye">
-                    <source src="static/videos/real-world/success/pick/pick_3.mp4" type="video/mp4">
-                  </video>
-                </div>
-
-              </div>
-            </div>
-            <!-- <div class="video-title" style="text-align: center; margin-top: 10px; font-weight: bold;">✅ RVAF(RLBench)</div> -->
-          </div>
-
-        </div> 
-        
-        <!-- press_the_toy_switch -->
-        <div class="content has-text-justified" style="text-align: center; margin-bottom: 3px;">
-          ✅ <span style="font-weight: bold;">RVAF: press the toy switch</span>
-        </div>
-        <!-- ------------ Video 滚动容器 ------------ -->
-        <div class="video-row-container" style="display: flex; justify-content: space-between; width: 100%; margin: 10px 0;">
-          <div class="video-suite" style="position: relative; width: 100%;">
-            <div class="video-scroll-container" style="width: 100%; overflow-x: auto; white-space: nowrap; border: 1px solid #ddd;">
-              <div class="video-wrapper" style="display: inline-flex; padding: 7px;">
-
-                <div class="video-item"  style="margin-right: 15px; min-width: 320px;">
-                    <video class="fast-video" controls autoplay muted loop width="320" height="240" title="press_the_toy_switch">
-                      <source src="static/videos/real-world/success/press/press_1.mp4" type="video/mp4">
-                    </video>
-                </div>
-
-                <div class="video-item"  style="margin-right: 15px; min-width: 320px;">
-                  <video class="fast-video" controls autoplay muted loop width="320" height="240" title="press_the_toy_switch">
-                    <source src="static/videos/real-world/success/press/press_2.mp4" type="video/mp4">
-                  </video>
-                </div>
-
-                <div class="video-item"  style="margin-right: 15px; min-width: 320px;">
-                  <video class="fast-video" controls autoplay muted loop width="320" height="240" title="press_the_toy_switch">
-                    <source src="static/videos/real-world/success/press/press_3.mp4" type="video/mp4">
-                  </video>
-                </div>
-
-              </div>
-            </div>
-            <!-- <div class="video-title" style="text-align: center; margin-top: 10px; font-weight: bold;">✅ RVAF(RLBench)</div> -->
-          </div>
-        </div> 
-
-        <!-- Generalization and Robustness -->
-        <div class="content has-text-justified" style="text-align: center; margin-bottom: 3px;">
-          ✅ <span style="font-weight: bold;">RVAF: generalization and robustness</span>
-        </div>
-        <!-- ------------ Video 滚动容器 ------------ -->
-        <div class="video-row-container" style="display: flex; justify-content: space-between; width: 100%; margin: 10px 0;">
-          <div class="video-suite" style="position: relative; width: 100%;">
-            <div class="video-scroll-container" style="width: 100%; overflow-x: auto; white-space: nowrap; border: 1px solid #ddd;">
-              <div class="video-wrapper" style="display: inline-flex; padding: 7px;">
-
-                <div class="video-item"  style="margin-right: 15px; width: 320px; height: 355px;">
-                    <video class="fast-video" controls autoplay muted loop width="320" height="355" title="pick_dart_and_insert_bullseye">
-                      <source src="static/videos/real-world/success/robustness/pick_1.mp4" type="video/mp4">
-                    </video>
-                </div>
-
-                <div class="video-item"  style="margin-right: 15px; width: 320px; height: 355px;">
-                  <video class="fast-video" controls autoplay muted loop width="320" height="355" title="press_the_toy_switch">
-                    <source src="static/videos/real-world/success/robustness/press_1.mp4" type="video/mp4">
-                  </video>
-                </div>
-
-                <div class="video-item" style="margin-right: 15px; width: 320px; height: 355px;">
-                  <video class="fast-video" controls autoplay muted loop width="320" height="355" title="press_the_toy_switch">
-                    <source src="static/videos/real-world/success/robustness/press_2.mp4" type="video/mp4">
-                  </video>
-                </div>
-
-                <div class="video-item" style="margin-right: 15px; width: 320px; height: 355px;">
-                  <video class="fast-video" controls autoplay muted loop width="320" height="355" title="press_the_toy_switch">
-                    <source src="static/videos/real-world/success/robustness/press_3.mp4" type="video/mp4">
-                  </video>
-                </div>
-
-              </div>
-            </div>
-            <!-- <div class="video-title" style="text-align: center; margin-top: 10px; font-weight: bold;">✅ RVAF(RLBench)</div> -->
-          </div>
-        </div> 
-
-        <!-- failure cases -->
-        <div class="content has-text-justified" style="text-align: center; margin-bottom: 3px;">
-          ❌ <span style="font-weight: bold;"> RVAF: failure cases</span>
-        </div>
-        <!-- ------------ Video 滚动容器 ------------ -->
-        <div class="video-row-container" style="display: flex; justify-content: space-between; width: 100%; margin: 10px 0;">
-          <div class="video-suite" style="position: relative; width: 100%;">
-            <div class="video-scroll-container" style="width: 100%; overflow-x: auto; white-space: nowrap; border: 1px solid #ddd;">
-              <div class="video-wrapper" style="display: inline-flex; padding: 7px;">
-
-                <div class="video-item"  style="margin-right: 15px; width: 320px; height: 355px;">
-                    <video class="fast-video" controls autoplay muted loop width="320" height="355" title="pick_dart_and_insert_bullseye">
-                      <source src="static/videos/real-world/failure/fail_pick.mp4" type="video/mp4">
-                    </video>
-                </div>
-
-                <div class="video-item"  style="margin-right: 15px; width: 320px; height: 355px;">
-                  <video class="fast-video" controls autoplay muted loop width="320" height="355" title="press_the_toy_switch">
-                    <source src="static/videos/real-world/failure/fail_press.mp4" type="video/mp4">
-                  </video>
-                </div>
-
-              </div>
-            </div>
-            <!-- <div class="video-title" style="text-align: center; margin-top: 10px; font-weight: bold;">✅ RVAF(RLBench)</div> -->
-          </div>
-
-        </div> 
-
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- End paper experiments -->
-
-
-
-<!-- Image carousel -->
-<!-- <section class="hero is-small">
-  <div class="hero-body">
-    <div class="container">
-      <div id="results-carousel" class="carousel results-carousel">
-       <div class="item"> -->
-        <!-- Your image here -->
-        <!-- <img src="static/images/carousel1.jpg" alt="MY ALT TEXT"/>
-        <h2 class="subtitle has-text-centered">
-          First image description.
-        </h2>
-      </div>
-      <div class="item"> -->
-        <!-- Your image here -->
-        <!-- <img src="static/images/carousel2.jpg" alt="MY ALT TEXT"/>
-        <h2 class="subtitle has-text-centered">
-          Second image description.
-        </h2>
-      </div>
-      <div class="item"> -->
-        <!-- Your image here -->
-        <!-- <img src="static/images/carousel3.jpg" alt="MY ALT TEXT"/>
-        <h2 class="subtitle has-text-centered">
-         Third image description.
-       </h2>
-     </div>
-     <div class="item"> -->
-      <!-- Your image here -->
-      <!-- <img src="static/images/carousel4.jpg" alt="MY ALT TEXT"/>
-      <h2 class="subtitle has-text-centered">
-        Fourth image description.
-      </h2>
-    </div>
-  </div>
-</div>
-</div>
-</section> -->
-<!-- End image carousel -->
-
-
-
-<!-- Youtube video -->
-<!-- <section class="hero is-small is-light">
-  <div class="hero-body">
-    <div class="container"> -->
-      <!-- Paper video. -->
-      <!-- <h2 class="title is-3">Video Presentation</h2>
-      <div class="columns is-centered has-text-centered">
-        <div class="column is-four-fifths">
-          
-          <div class="publication-video"> -->
-            <!-- Youtube embed code here -->
-            <!-- <iframe src="https://www.youtube.com/embed/JkaxUblCGz0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
           </div>
         </div>
       </div>
-    </div>
-  </div>
-</section> -->
-<!-- End youtube video -->
+    </section> -->
+    <!-- End video carousel -->
+    <!-- Paper poster -->
+    <!-- <section class="hero is-small is-light">
+      <div class="hero-body">
+        <div class="container">
+          <h2 class="title">Poster</h2>
 
+          <iframe  src="static/pdfs/sample.pdf" width="100%" height="550">
+              </iframe>
 
-
-<!-- Video carousel -->
-<!-- <section class="hero is-small">
-  <div class="hero-body">
-    <div class="container">
-      <h2 class="title is-3">Another Carousel</h2>
-      <div id="results-carousel" class="carousel results-carousel">
-        <div class="item item-video1">
-          <video poster="" id="video1" autoplay controls muted loop height="100%"> -->
-            <!-- Your video file here -->
-            <!-- <source src="static/videos/carousel1.mp4"
-            type="video/mp4">
-          </video>
+          </div>
         </div>
-        <div class="item item-video2">
-          <video poster="" id="video2" autoplay controls muted loop height="100%"> -->
-            <!-- Your video file here -->
-            <!-- <source src="static/videos/carousel2.mp4"
-            type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-video3">
-          <video poster="" id="video3" autoplay controls muted loop height="100%">\ -->
-            <!-- Your video file here -->
-            <!-- <source src="static/videos/carousel3.mp4"
-            type="video/mp4">
-          </video>
-        </div>
-      </div>
-    </div>
-  </div>
-</section> -->
-<!-- End video carousel -->
-
-
-
-<!-- Paper poster -->
-<!-- <section class="hero is-small is-light">
-  <div class="hero-body">
-    <div class="container">
-      <h2 class="title">Poster</h2>
-
-      <iframe  src="static/pdfs/sample.pdf" width="100%" height="550">
-          </iframe>
-        
-      </div>
-    </div>
-  </section> -->
-<!--End paper poster -->
-
-
-<!--BibTex citation -->
-  <section class="section" id="BibTeX">
-    <div class="container is-max-desktop content">
-      <h2 class="title">BibTeX</h2>
-      <pre><code>Coming soon...
+      </section> -->
+    <!--End paper poster -->
+    <!--BibTex citation -->
+    <section class="section" id="BibTeX">
+        <div class="container is-max-desktop content">
+            <h2 class="title">BibTeX</h2>
+            <pre><code>Coming soon...
       </code></pre>
-    </div>
-</section>
-<!--End BibTex citation -->
-
-
-<footer class="footer">
-  <div class="container">
-    <div class="columns is-centered">
-      <div class="column is-8">
-        <div class="content">
-
-          <p>
-            This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a> which was adopted from the <a href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
-            </a>.
-          </p>
-
         </div>
-      </div>
-    </div>
-  </div>
-</footer>
+    </section>
+    <!--End BibTex citation -->
 
-<!-- Statcounter tracking code -->
-  
-<!-- You can add a tracker to track page visits by creating an account at statcounter.com -->
 
+    <footer class="footer">
+        <div class="container">
+            <div class="columns is-centered">
+                <div class="column is-8">
+                    <div class="content">
+
+                        <p>
+                            This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a> which was adopted from the <a href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
+                            </a>.
+                        </p>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Statcounter tracking code -->
+    <!-- You can add a tracker to track page visits by creating an account at statcounter.com -->
     <!-- End of Statcounter Code -->
 
-  <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      const videos = document.querySelectorAll('.fast-video');
-      videos.forEach(video => {
-        video.playbackRate = 2.0;
-      });
-    });
-  </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const videos = document.querySelectorAll('.fast-video');
+            videos.forEach(video => {
+                video.playbackRate = 2.0;
+            });
+        });
+    </script>
 
-  </body>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            document.querySelectorAll('.exec-thumb').forEach(v => {
+                // 保证属性并尝试播放（静音是关键）
+                v.muted = true;
+                v.loop = true;
+                v.playsInline = true;
+                v.autoplay = true;
+                try { v.play(); } catch (e) { /* 浏览器策略阻止，忽略 */ }
+            });
+        });
+    </script>
+
+</body>
   </html>
